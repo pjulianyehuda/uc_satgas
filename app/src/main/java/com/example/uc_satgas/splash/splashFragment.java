@@ -31,7 +31,7 @@ public class splashFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         new Handler().postDelayed(() -> {
-            NavDirections action = SplashFragmentDirections.actionMain();
+            NavDirections action = splashFragmentDirections.actionSplashFragmentToLoginFragment();
             Navigation.findNavController(view).navigate(action);
         }, 2000);
     }

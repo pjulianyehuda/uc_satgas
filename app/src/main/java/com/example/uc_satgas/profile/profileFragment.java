@@ -1,5 +1,6 @@
 package com.example.uc_satgas.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.uc_satgas.R;
+import com.example.uc_satgas.login.LoginFragment;
 
 
 public class profileFragment extends Fragment {
@@ -38,7 +40,10 @@ public class profileFragment extends Fragment {
         button_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), LoginFragment.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             }
         });
 
